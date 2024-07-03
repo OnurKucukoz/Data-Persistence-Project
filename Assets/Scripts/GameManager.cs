@@ -43,12 +43,12 @@ public class GameManager : MonoBehaviour
         data.points = points;
         string json = JsonUtility.ToJson(data);
 
-        File.WriteAllText("C:\\Users\\onur\\Desktop" + "\\savefile.json", json);
+        File.WriteAllText(Application.persistentDataPath + "savefile.json", json);
     }
 
     public void LoadName()
     {
-        string path = "C:\\Users\\onur\\Desktop" + "\\savefile.json";
+        string path = Application.persistentDataPath + "savefile.json";
         if (File.Exists(path))
         {
             string json = File.ReadAllText(path);
@@ -64,4 +64,3 @@ public class GameManager : MonoBehaviour
         }
     }
 }
-//Application.persistentDataPath + "/savefile.json;"
